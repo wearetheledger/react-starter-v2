@@ -1,0 +1,9 @@
+import actionCreatorFactory from "typescript-fsa";
+
+const actionCreator = actionCreatorFactory("{{ createActionNamespace directory }}");
+
+export interface {{ pascalCase name }}ActionProperties {
+
+}
+
+export const {{ camelCase name }} = actionCreator<{{ pascalCase name }}ActionProperties>("{{ upperCase name }}");

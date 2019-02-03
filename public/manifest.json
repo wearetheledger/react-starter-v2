@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "React starter v2",
+  "name": "TheLedger - React starter v2",
   "icons": [
     {
       "src": "favicon.ico",

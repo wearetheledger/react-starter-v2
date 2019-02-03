@@ -1,0 +1,22 @@
+import { autobind } from "core-decorators";
+import * as React from "react";
+
+import { {{pascalCase name}}Props } from "@{{type}}{{directory}}{{camelCase name}}/{{camelCase name}}Container";
+{{#if withStyledComponents}}import { {{pascalCase name}}Style } from "@{{type}}{{directory}}{{camelCase name}}/{{camelCase name}}Style";{{/if}}
+
+interface State {
+
+}
+
+@autobind
+export class {{ pascalCase name }} extends React.Component<{{ pascalCase name }}Props, State>{
+    public render() {
+        return (
+            {{#if withStyledComponents}}<{{pascalCase name}}Style>
+
+            </{{pascalCase name}}Style>{{else}}<div>
+
+            </div>{{/if}}
+        );
+    }
+}

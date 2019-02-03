@@ -1,0 +1,10 @@
+{
+	"auth.login": "Inloggen",
+	"auth.poweredBy": "Concept door",
+	"auth.username": "Gebruikersnaam",
+	"auth.password": "Wachtwoord",
+	"form.required": "Dit veld is verplicht",
+	"auth.otherLogin": "Of log in met",
+	"home": "Home",
+	"logout": "Uitloggen"
+}

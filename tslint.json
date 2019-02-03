@@ -1,0 +1,35 @@
+{
+	"extends": ["tslint-react", "tslint:recommended", "tslint-microsoft-contrib", "tslint-config-prettier"],
+	"rules": {
+		"quotemark": [true, "double"],
+		"export-name": false,
+		"arrow-call-signature": false,
+		"no-import-side-effect": false,
+		"no-implicit-dependencies": false,
+		"eofline": true,
+		"typedef": [true, "property-declaration", "member-variable-declaration"],
+		"variable-name": false,
+		"no-submodule-imports": false,
+		"interface-name": false,
+		"no-empty-interface": false,
+		"jsx-no-multiline-js": false,
+		"jsx-no-lambda": false,
+		"strict-boolean-expressions": false,
+		"completed-docs": false,
+		"jsx-self-close": false,
+		"match-default-export-name": false,
+		"radix": false,
+		"no-var-requires": false,
+		"no-require-imports": false,
+		"no-unsafe-any": false,
+		"this-binding-issue": [true, { "allow-anonymous-listeners": true }],
+		"jsx-boolean-value": false,
+		"no-relative-imports": false,
+		"react-this-binding-issue": false,
+		"no-empty": false,
+		"react-a11y-anchors": false
+	},
+	"linterOptions": {
+		"exclude": ["config/**/*.js", "scripts/**/*.js", "templates/**/*.txt", "node_modules/**/*.ts"]
+	}
+}

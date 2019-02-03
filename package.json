@@ -1,25 +1,69 @@
 {
-  "name": "react-start-v2",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-scripts": "2.1.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+	"name": "theledger-react-starter-v2",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"analyze": "source-map-explorer build/static/js/main.*",
+		"start": "craco start",
+		"build": "craco build",
+		"test": "craco test",
+		"eject": "react-scripts eject",
+		"lint": "tslint 'src/**/*.{ts,tsx}'",
+		"generate-swagger": "node scripts/codegen.js http://localhost:5000/api-json"
+	},
+	"dependencies": {
+		"@craco/craco": "^3.4.1",
+		"antd": "^3.13.0",
+		"core-decorators": "^0.20.0",
+		"jwt-decode": "^2.2.0",
+		"moment": "^2.24.0",
+		"prop-types": "^15.5.4",
+		"react": "^16.7.0",
+		"react-dom": "^16.7.0",
+		"react-intl": "^2.8.0",
+		"react-redux": "^6.0.0",
+		"react-router": "^4.3.1",
+		"react-router-dom": "^4.3.1",
+		"react-simple-auth": "^1.0.0",
+		"redux": "^4.0.1",
+		"styled-components": "^4.1.3",
+		"superagent": "^4.1.0",
+		"typescript-fsa": "^3.0.0-beta-2",
+		"typescript-fsa-reducers": "^1.2.0"
+	},
+	"devDependencies": {
+		"@types/jest": "23.3.13",
+		"@types/node": "^10.12.21",
+		"@types/react-dom": "^16.0.11",
+		"@types/react-intl": "^2.3.15",
+		"@types/react-redux": "^7.0.1",
+		"@types/react-router": "^4.4.3",
+		"@types/react-router-dom": "^4.3.1",
+		"@types/styled-components": "^4.1.6",
+		"@types/superagent": "^3.8.6",
+		"babel-plugin-import": "^1.11.0",
+		"less": "^3.9.0",
+		"less-loader": "^4.1.0",
+		"prettier": "^1.16.3",
+		"react-scripts": "2.1.3",
+		"redux-devtools-extension": "^2.13.7",
+		"source-map-explorer": "^1.6.0",
+		"swagger-typescript-codegen": "^1.9.0",
+		"tsconfig-paths-webpack-plugin": "^3.2.0",
+		"tslint": "^5.12.1",
+		"tslint-config-prettier": "^1.17.0",
+		"tslint-microsoft-contrib": "^6.0.0",
+		"tslint-react": "^3.6.0",
+		"typescript": "3.3.1",
+		"typescript-tslint-plugin": "^0.3.1"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": [
+		">0.2%",
+		"not dead",
+		"not ie <= 11",
+		"not op_mini all"
+	]
 }

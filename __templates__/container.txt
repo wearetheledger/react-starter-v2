@@ -1,0 +1,39 @@
+{{#if withRedux }}import { connect } from "react-redux";{{/if}}
+import { compose{{#if withRedux }}, Dispatch{{/if}} } from "redux";
+
+{{#if withRedux }}import { StoreState } from "@store/reducers/root";
+
+{{/if}}
+import { {{pascalCase name}} } from "@{{type}}{{directory}}{{camelCase name}}/{{camelCase name}}";
+
+export interface {{ pascalCase name }}ContainerProps {
+
+}
+{{#if withRedux }}
+
+export const mapStateToProps = (state: StoreState) => {
+  return {
+
+  };
+}
+
+export const mapDispatchToProps = (dispatch: Dispatch) => {
+  return {
+
+  };
+}
+
+export type StateProps = ReturnType<typeof mapStateToProps>;
+export type DispatchProps = ReturnType<typeof mapDispatchToProps>;
+
+const withRedux = connect(mapStateToProps, mapDispatchToProps);
+{{/if}}
+
+export const {{pascalCase name}}Container = compose<React.ComponentType<{{ pascalCase name }}ContainerProps>>(
+ {{#if withRedux }}withRedux{{/if}}
+)({{ pascalCase name }});
+
+export type {{ pascalCase name }}Props =
+  {{ pascalCase name }}ContainerProps{{#if withRedux }} &
+  StateProps &
+  DispatchProps{{/if}};

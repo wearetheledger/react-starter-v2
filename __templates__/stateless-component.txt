@@ -1,0 +1,16 @@
+import * as React from "react";
+{{#if withStyledComponents}}import { {{pascalCase name}}Style } from "@components{{directory}}{{camelCase name}}/{{camelCase name}}Style";{{/if}}
+
+export interface {{pascalCase name}}Props {
+
+}
+
+export const {{pascalCase name}}: React.StatelessComponent<{{pascalCase name}}Props> = (props: {{pascalCase name}}Props) => {
+    return (
+        {{#if withStyledComponents}}<{{pascalCase name}}Style>
+
+        </{{pascalCase name}}Style>{{else}}<div>
+
+        </div>{{/if}}
+    );
+};

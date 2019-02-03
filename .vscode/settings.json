@@ -1,0 +1,24 @@
+{
+	"typescriptHero.imports.grouping": [
+		"Plains",
+		"Modules",
+		{
+			"identifier": "/@(assets|pages|store|style|translations|utils|api|components)/.*/",
+			"order": "desc"
+		},
+		"Workspace"
+	],
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		".vscode": true,
+		"node_modules": true
+	},
+	"typescriptHero.imports.multiLineTrailingComma": false,
+	"typescriptHero.imports.stringQuoteStyle": "\"",
+	// "editor.formatOnSave": true,
+	"javascript.format.enable": true
+}
