@@ -60,7 +60,7 @@ export const HeaderImage = styled.div`
 		right: 0;
 		top:0;
 		bottom: 0;
-		background: ${theme.blue6};
+		background: ${theme.dark};
 		z-index: -1;
 		opacity:.5;
 	}

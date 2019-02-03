@@ -1,5 +1,10 @@
 {
-	"extends": ["tslint-react", "tslint:recommended", "tslint-microsoft-contrib", "tslint-config-prettier"],
+	"extends": [
+		"tslint-react",
+		"tslint:recommended",
+		"tslint-microsoft-contrib",
+		"tslint-config-prettier"
+	],
 	"rules": {
 		"quotemark": [true, "double"],
 		"export-name": false,
@@ -27,9 +32,15 @@
 		"no-relative-imports": false,
 		"react-this-binding-issue": false,
 		"no-empty": false,
-		"react-a11y-anchors": false
+		"react-a11y-anchors": false,
+		"no-null-keyword": false
 	},
 	"linterOptions": {
-		"exclude": ["config/**/*.js", "scripts/**/*.js", "templates/**/*.txt", "node_modules/**/*.ts"]
+		"exclude": [
+			"config/**/*.js",
+			"scripts/**/*.js",
+			"templates/**/*.txt",
+			"node_modules/**/*.ts"
+		]
 	}
 }

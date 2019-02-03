@@ -12,7 +12,6 @@ export interface Auth0IdToken extends IdToken {
 
 export interface Session {
 	accessToken: string;
-	expireDurationSeconds: number;
 	idToken: string;
 	decodedIdToken: Auth0IdToken;
 }
@@ -73,17 +72,8 @@ export const auth0Provider: IProvider<Session> = {
 			}
 		}
 
-		let expireDurationSeconds: number = 3600;
-		const expireDurationSecondsMatch = redirectUrl.match(
-			/expires_in=([^&]+)/
-		);
-		if (expireDurationSecondsMatch) {
-			expireDurationSeconds = parseInt(expireDurationSecondsMatch[1]);
-		}
-
 		return {
 			accessToken,
-			expireDurationSeconds,
 			idToken,
 			decodedIdToken
 		};
@@ -92,13 +82,10 @@ export const auth0Provider: IProvider<Session> = {
 	validateSession(session: Session): boolean {
 		const now = new Date().getTime() / 1000;
 
-		const expiration =
-			session.decodedIdToken.iat + session.expireDurationSeconds;
-
 		// 15 minutes minimum duration until token expires
 		const minimumDuration = 60 * 15;
 
-		return expiration - now > minimumDuration;
+		return session.decodedIdToken.exp - now > minimumDuration;
 	},
 
 	getAccessToken(session: Session, resourceId: string): string {

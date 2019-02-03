@@ -17,6 +17,7 @@ export interface NavItem {
 	to: string;
 	shouldRender: boolean;
 	name: string | ReactNode;
+	icon?: ReactNode;
 	exact?: boolean;
 	component?: ReactNode;
 }

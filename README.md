@@ -8,6 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - typescript
 - ant design
 - swagger code generator
+- localization (react-intl)
 
 ## Available Scripts
 
