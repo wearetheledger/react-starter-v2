@@ -74,4 +74,8 @@ Please use [plopjs](https://plopjs.com/documentation/) to generate pages, compon
 
 You can do this by globally installing plop `npm i -g plop` and running the `plop` command in the root of this project.
 
+## Recommended packages
+- charting library [nivo](https://nivo.rocks)
+- maps [mapbox](https://www.mapbox.com/maps/)
+
 
