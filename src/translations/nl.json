@@ -6,5 +6,6 @@
 	"form.required": "Dit veld is verplicht",
 	"auth.otherLogin": "Of log in met",
 	"home": "Home",
-	"logout": "Uitloggen"
+	"logout": "Uitloggen",
+	"auth.login.failed": "Er was een probleem tijdens het inloggen"
 }

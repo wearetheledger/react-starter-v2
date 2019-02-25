@@ -3,8 +3,6 @@ import { compose } from "redux";
 
 export interface MainContainerProps {}
 
-export const MainContainer = compose<React.ComponentType<MainContainerProps>>()(
-	Main
-);
+export const MainContainer = compose<React.ComponentType<MainContainerProps>>()(Main);
 
 export type MainProps = MainContainerProps;

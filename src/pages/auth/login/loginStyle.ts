@@ -5,7 +5,11 @@ export const LoginStyle = styled.div`
 	display: grid;
 	grid-template-areas: "sidebar";
 	height: 100%;
-		grid-template-columns: 1fr;
+	grid-template-columns: 1fr;
+
+	.ant-alert {
+		margin-bottom: 2rem;
+	}
 
 	@media screen and (min-width: 700px) {
 		grid-template-columns: 1fr 1.5fr;

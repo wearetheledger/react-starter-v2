@@ -2,13 +2,21 @@ import loginLock from "@assets/images/login-lock.jpg";
 import logo from "@assets/images/logo_black.svg";
 import { LoginForm, LoginFromValues } from "@components/auth/loginForm/loginForm";
 import { LoginProps } from "@pages/auth/login/loginContainer";
-import { HeaderImage, LoginFooter, LoginImage, LoginSidebar, LoginStyle, Logo } from "@pages/auth/login/loginStyle";
+import {
+	HeaderImage,
+	LoginFooter,
+	LoginImage,
+	LoginSidebar,
+	LoginStyle,
+	Logo
+} from "@pages/auth/login/loginStyle";
 import { auth0Provider } from "@utils/auth/auth0Provider";
 import { autobind } from "core-decorators";
 import * as React from "react";
 import { FormattedMessage } from "react-intl";
 import { Redirect } from "react-router";
 import RSA from "react-simple-auth";
+import { Alert } from "antd";
 
 interface State {
 	error: boolean;
@@ -16,6 +24,10 @@ interface State {
 
 @autobind
 export class Login extends React.Component<LoginProps, State> {
+	public readonly state: State = {
+		error: false
+	};
+
 	public render() {
 		const {
 			location: { state },
@@ -23,6 +35,8 @@ export class Login extends React.Component<LoginProps, State> {
 			form,
 			intl
 		} = this.props;
+
+		const { error } = this.state;
 
 		if (isAuthenticated) {
 			const redirectTo = (state || {}).redirectFrom || "/";
@@ -36,12 +50,21 @@ export class Login extends React.Component<LoginProps, State> {
 					<Logo src={logo} />
 					<div>
 						<h1>React starter v2</h1>
+						{error && (
+							<Alert
+								message={intl.formatMessage({ id: "auth.login.failed" })}
+								type="error"
+							/>
+						)}
 						<LoginForm intl={intl} form={form} handleSubmit={this.handleSubmit} />
-						<FormattedMessage id="auth.otherLogin" />  <a role="button" onClick={this.auth0Login}>Auth0</a>
-
+						<FormattedMessage id="auth.otherLogin" />{" "}
+						<a role="button" onClick={this.auth0Login}>
+							Auth0
+						</a>
 					</div>
 					<LoginFooter>
-						<FormattedMessage id="auth.poweredBy" /> <a href="https://theledger.be">TheLedger</a>
+						<FormattedMessage id="auth.poweredBy" />{" "}
+						<a href="https://theledger.be">TheLedger</a>
 					</LoginFooter>
 				</LoginSidebar>
 				<LoginImage>
@@ -76,8 +99,6 @@ export class Login extends React.Component<LoginProps, State> {
 			this.setState({
 				error: true
 			});
-
-			throw err;
 		}
 	}
 }

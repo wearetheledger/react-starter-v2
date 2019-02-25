@@ -1,7 +1,8 @@
-import { APIService } from "@api/swagger";
+// import { APIService } from "@api/swagger";
 import { MainProps } from "@pages/main/mainContainer";
 import { MainStyle } from "@pages/main/mainStyle";
 import { autobind } from "core-decorators";
+import _ from "lodash";
 import * as React from "react";
 
 interface State {}
@@ -9,10 +10,13 @@ interface State {}
 @autobind
 export class Main extends React.Component<MainProps, State> {
 	public componentDidMount() {
-		APIService.getCars({}).then(cars => {
-			console.log(cars);
-		});
+		// Example HTTP request
+		// APIService.getCars({})
+		// 	.then(cars => {
+		// 		console.log(cars);
+		// 	});
 	}
+
 	public render() {
 		return (
 			<MainStyle>

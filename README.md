@@ -1,6 +1,13 @@
 # React starter v2
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+- [Features](#features)
+- [Available Scripts](#available-scripts)
+- [Authentication providers](#authentication)
+- [Code generation](#code-generation)
+- [Recommended packages](#recommended-packages)
+- [Possible issues](#possible-issues)
+
 ## Features
 
 - styled components
@@ -68,14 +75,21 @@ You can take a look at the [Auth0Provider](src/utils/auth/auth0Provider.ts) for 
 The only other thing you should do, is to go to [src/store/reducers/authReducer.ts](src/store/reducers/authReducer.ts) and replace the `Auth0IdToken` by your newly created interface.
 
 
-## Code generator
+## Code generation
 
 Please use [plopjs](https://plopjs.com/documentation/) to generate pages, components & redux actions to keep code consistency.
 
 You can do this by globally installing plop `npm i -g plop` and running the `plop` command in the root of this project.
 
 ## Recommended packages
+Please continue suggesting and adding interesting packages.
+
 - charting library [nivo](https://nivo.rocks)
 - maps [mapbox](https://www.mapbox.com/maps/)
+
+## Possible issues
+### Lodash
+We use [`lodash-webpack-plugin`](https://github.com/lodash/lodash-webpack-plugin) to reduce the bundle size and only import lodash functions which are used. For this, we only enable certain features of lodash in `craco.config.js`. Please change the settings there if you are experiencing issues.
+
 
 

@@ -1,6 +1,6 @@
 // Based on the Ant Design documentation:
 // https://ant.design/docs/react/use-with-create-react-app#Advanced-Guides
-
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 const modifyVars = require("./src/style/ant-theme");
 
@@ -10,7 +10,8 @@ module.exports = {
 			[
 				"import",
 				{ libraryName: "antd", libraryDirectory: "es", style: true }
-			]
+			],
+			"lodash"
 		]
 	},
 	plugins: [
@@ -18,12 +19,20 @@ module.exports = {
 			plugin: {
 				overrideWebpackConfig: ({ webpackConfig }) => {
 
-                    // Add custom paths resolver for typescript
-                    webpackConfig.resolve.plugins.push(new TsconfigPathsPlugin({}))
+					// Tree shaking for lodash
+					// webpackConfig.resolve.plugins.push(new LodashModuleReplacementPlugin({
+					// 	collections: true,
+					// 	paths: true,
+					// 	memoizing: true,
+					// 	flattening: true
+					// }));
+
+					// Add custom paths resolver for typescript
+					webpackConfig.resolve.plugins.push(new TsconfigPathsPlugin({}))
 
 					const gitHubIssueUrl = (repo, query) =>
 						`https://github.com/${repo}/issues${
-							query ? `?q=is%3Aissue+${query}` : ""
+						query ? `?q=is%3Aissue+${query}` : ""
 						}`;
 
 					const throwInvalidConfigError = ({
@@ -32,17 +41,17 @@ module.exports = {
 					}) => {
 						throw new Error(
 							`${message}\n\n` +
-								"Did you update create-react-app or craco recently? \n" +
-								"Please take a look at some recent issues in craco and " +
-								"create-react-app to see if someone has found a solution: \n\n" +
-								`* ${gitHubIssueUrl(
-									"sharegate/craco",
-									query
-								)}\n` +
-								`* ${gitHubIssueUrl(
-									"facebook/create-react-app",
-									query
-								)}\n`
+							"Did you update create-react-app or craco recently? \n" +
+							"Please take a look at some recent issues in craco and " +
+							"create-react-app to see if someone has found a solution: \n\n" +
+							`* ${gitHubIssueUrl(
+								"sharegate/craco",
+								query
+							)}\n` +
+							`* ${gitHubIssueUrl(
+								"facebook/create-react-app",
+								query
+							)}\n`
 						);
 					};
 
@@ -84,6 +93,7 @@ module.exports = {
 					const oneOfRule = webpackConfig.module.rules.find(
 						rule => typeof rule.oneOf !== "undefined"
 					);
+
 					if (!oneOfRule) {
 						throwInvalidConfigError({
 							message:
