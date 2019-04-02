@@ -40,7 +40,8 @@
 			"config/**/*.js",
 			"scripts/**/*.js",
 			"templates/**/*.txt",
-			"node_modules/**/*.ts"
+			"node_modules/**/*.ts",
+			"src/api/swagger-gen.ts"
 		]
 	}
 }
