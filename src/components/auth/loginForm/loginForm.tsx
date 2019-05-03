@@ -1,8 +1,8 @@
+import { requiredRule } from "@utils/rules/requiredRule";
 import { Button, Form, Icon, Input } from "antd";
 import { WrappedFormUtils } from "antd/lib/form/Form";
 import * as React from "react";
 import { FormattedMessage, InjectedIntl } from "react-intl";
-import { requiredRule } from "@utils/rules/requiredRule";
 
 export interface LoginFormProps {
 	form: WrappedFormUtils;

@@ -73,6 +73,12 @@ module.exports = function (plop) {
                 message: () => `Include styled component?`,
                 default: true
             },
+            {
+                type: 'confirm',
+                name: 'withTests',
+                message: () => `Include tests?`,
+                default: true
+            },
         ],
         actions: (data) => {
             let actions = [];
@@ -109,6 +115,15 @@ module.exports = function (plop) {
                     templateFile: '__templates__/styled-component.txt',
                     abortOnFail: true
                 })
+            }
+
+            if (data.withTests) {
+                actions.push({
+                    type: `add`,
+                    path: `src/__tests__/{{type}}{{directory}}{{camelCase name}}/{{camelCase name}}.test.tsx`,
+                    templateFile: `__templates__/test.txt`,
+                    abortOnFail: true
+                });
             }
 
 

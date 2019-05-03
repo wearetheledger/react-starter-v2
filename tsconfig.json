@@ -39,5 +39,5 @@
 		"src/style/ant-theme.js"
 	],
 	"types": ["typePatches"],
-	"include": ["src"]
+	"include": ["src", "__tests__/**/*"]
 }

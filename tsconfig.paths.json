@@ -9,7 +9,8 @@
 			"@utils/*": ["utils/*"],
 			"@translations/*": ["translations/*"],
 			"@assets/*": ["assets/*"],
-			"@api/*": ["api/*"]
+			"@api/*": ["api/*"],
+			"__tests__/*": ["__tests__/*"]
 		}
 	}
 }

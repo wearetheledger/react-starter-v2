@@ -1,17 +1,14 @@
 import { MainLayoutContainer, NavItem } from "@components/main/mainLayout/mainLayoutContainer";
-import { PrivateRoute } from "@components/routing/privateRoute/privateRoute";
+import { PrivateRoute } from "@components/common/privateRoute/privateRoute";
 import { LoginContainer } from "@pages/auth/login/loginContainer";
 import { MainContainer } from "@pages/main/mainContainer";
 import { logout } from "@store/actions/auth/logout";
 import { configureStore } from "@store/configureStore";
 import { Icon } from "antd";
 import * as React from "react";
-import { addLocaleData, FormattedMessage, IntlProvider } from "react-intl";
-import * as nl from "react-intl/locale-data/nl";
+import { FormattedMessage, IntlProvider } from "react-intl";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-
-addLocaleData([...nl]);
 
 const messages = require("./translations/nl.json");
 

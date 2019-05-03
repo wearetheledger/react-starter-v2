@@ -3,16 +3,33 @@
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 const modifyVars = require("./src/style/ant-theme");
+const { whenTest } = require("@craco/craco");
+
+const plugins = [
+	"lodash"
+];
+
+if (!whenTest) {
+	plugins.push([
+		"import",
+		{ libraryName: "antd", libraryDirectory: "es", style: true }
+	]);
+}
 
 module.exports = {
 	babel: {
-		plugins: [
-			[
-				"import",
-				{ libraryName: "antd", libraryDirectory: "es", style: true }
-			],
-			"lodash"
-		]
+		plugins
+	},
+	jest: {
+		configure: (jestConfig, { env, paths, resolve, rootDir }) => {
+
+			jestConfig.moduleNameMapper['^.+\\.module\\.(css|sass|scss|less)$'] = 'identity-obj-proxy';
+			jestConfig.moduleNameMapper["@(store|style|pages|components|utils|translations|assets|api)(|.*)$"] = "<rootDir>/src/$1/$2";
+			jestConfig.moduleNameMapper["__tests__(|.*)$"] = "<rootDir>/src/__tests__/$1";
+			jestConfig.testPathIgnorePatterns = ["node_modules", "src/__tests__/helpers/"]
+
+			return jestConfig;
+		}
 	},
 	plugins: [
 		{

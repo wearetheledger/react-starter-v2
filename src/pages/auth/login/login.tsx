@@ -11,12 +11,12 @@ import {
 	Logo
 } from "@pages/auth/login/loginStyle";
 import { auth0Provider } from "@utils/auth/auth0Provider";
+import { Alert } from "antd";
 import { autobind } from "core-decorators";
 import * as React from "react";
 import { FormattedMessage } from "react-intl";
 import { Redirect } from "react-router";
 import RSA from "react-simple-auth";
-import { Alert } from "antd";
 
 interface State {
 	error: boolean;

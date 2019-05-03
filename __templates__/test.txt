@@ -1,0 +1,9 @@
+import { {{pascalCase name}}{{#unless stateless}}Container{{/unless}} } from "@{{type}}{{directory}}{{camelCase name}}/{{camelCase name}}{{#unless stateless}}Container{{/unless}}";
+import React from "react";
+import renderer from "react-test-renderer";
+
+it("should match snapshot", () => {
+  const wrapper = renderer.create(<{{pascalCase name}}{{#unless stateless}}Container{{/unless}} />);
+  const tree = wrapper.toJSON();
+  expect(tree).toMatchSnapshot();
+});
