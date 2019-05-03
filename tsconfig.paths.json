@@ -1,6 +1,6 @@
 {
-    "compilerOptions":{
-        "baseUrl": "src",
+	"compilerOptions": {
+		"baseUrl": "src",
 		"paths": {
 			"@store/*": ["store/*"],
 			"@style/*": ["style/*"],
@@ -11,5 +11,5 @@
 			"@assets/*": ["assets/*"],
 			"@api/*": ["api/*"]
 		}
-    }
+	}
 }

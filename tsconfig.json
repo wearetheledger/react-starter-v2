@@ -1,51 +1,43 @@
 {
-  "extends": "./paths.json",
-  "compilerOptions": {
-    "plugins": [
-      {
-        "name": "typescript-tslint-plugin"
-      }
-    ],
-    "moduleResolution": "node",
-    "noImplicitReturns": true,
-    "experimentalDecorators": true,
-    "noImplicitThis": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "rootDir": ".",
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "preserve"
-  },
-  "exclude": [
-    "node_modules",
-    "build",
-    "scripts",
-    "acceptance-tests",
-    "jest",
-    "src/setupTests.ts",
-    "config",
-    "plopfile.js",
-    "src/style/ant-theme.js"
-  ],
-  "types": [
-    "typePatches"
-  ],
-  "include": [
-    "src"
-  ]
+	"extends": "./tsconfig.paths.json",
+	"compilerOptions": {
+		"plugins": [
+			{
+				"name": "typescript-tslint-plugin"
+			}
+		],
+		"moduleResolution": "node",
+		"noImplicitReturns": true,
+		"experimentalDecorators": true,
+		"noImplicitThis": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"rootDir": ".",
+		"target": "es5",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"module": "esnext",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "preserve"
+	},
+	"exclude": [
+		"node_modules",
+		"build",
+		"scripts",
+		"acceptance-tests",
+		"jest",
+		"src/setupTests.ts",
+		"config",
+		"plopfile.js",
+		"src/style/ant-theme.js"
+	],
+	"types": ["typePatches"],
+	"include": ["src"]
 }
