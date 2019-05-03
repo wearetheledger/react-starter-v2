@@ -1,5 +1,5 @@
-import { MainLayoutContainer, NavItem } from "@components/main/mainLayout/mainLayoutContainer";
 import { PrivateRoute } from "@components/common/privateRoute/privateRoute";
+import { MainLayoutContainer, NavItem } from "@components/main/mainLayout/mainLayoutContainer";
 import { LoginContainer } from "@pages/auth/login/loginContainer";
 import { MainContainer } from "@pages/main/mainContainer";
 import { logout } from "@store/actions/auth/logout";
