@@ -1,4 +1,6 @@
-# React starter v2
+# React starter v2 
+![travis badge](https://travis-ci.org/wearetheledger/react-starter-v2.svg?branch=master)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 - [Features](#features)
