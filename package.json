@@ -57,7 +57,7 @@
 		"redux-devtools-extension": "^2.13.8",
 		"redux-mock-store": "^1.5.3",
 		"source-map-explorer": "^1.8.0",
-		"swagger-taxos-codegen": "^2.0.7",
+		"swagger-taxos-codegen": "^2.1.1",
 		"tsconfig-paths-webpack-plugin": "^3.2.0",
 		"tslint": "^5.16.0",
 		"tslint-config-prettier": "^1.17.0",
