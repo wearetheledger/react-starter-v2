@@ -36,7 +36,7 @@
 		"@types/jest": "23.3.13",
 		"@types/lodash": "^4.14.123",
 		"@types/node": "^10.14.6",
-		"@types/react-dom": "^16.0.11",
+		"@types/react-dom": "^16.8.4",
 		"@types/react-intl": "^2.3.17",
 		"@types/react-redux": "^7.0.8",
 		"@types/react-router": "^4.4.5",
