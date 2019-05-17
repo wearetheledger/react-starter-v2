@@ -264,12 +264,15 @@ exports[`should match snapshot 1`] = `
         </div>
       </form>
        
-      <a
+      <button
+        className="ant-btn ant-btn-link"
         onClick={[Function]}
-        role="button"
+        type="button"
       >
-        Auth0
-      </a>
+        <span>
+          Auth0
+        </span>
+      </button>
     </div>
     <div
       className="sc-ifAKCX cFlEyZ"
