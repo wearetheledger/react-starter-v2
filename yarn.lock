@@ -812,9 +812,9 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@craco/craco@^5.0.2":
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/@craco/craco/-/craco-5.0.2.tgz#6ad6a52546bb868d7a5a79bf99f4f58f931490d3"
+"@craco/craco@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@craco/craco/-/craco-5.1.0.tgz#69c06bafe2d94f5284f87f704e5e47470e663bd5"
   dependencies:
     cross-spawn "6.0.5"
     lodash.mergewith "4.6.1"
