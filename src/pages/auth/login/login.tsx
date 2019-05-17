@@ -58,9 +58,9 @@ export class Login extends React.Component<LoginProps, State> {
 						)}
 						<LoginForm intl={intl} form={form} handleSubmit={this.handleSubmit} />
 						<FormattedMessage id="auth.otherLogin" />{" "}
-						<a role="button" onClick={this.auth0Login}>
+						<Button type="link" onClick={this.auth0Login}>
 							Auth0
-						</a>
+						</Button>
 					</div>
 					<LoginFooter>
 						<FormattedMessage id="auth.poweredBy" />{" "}
