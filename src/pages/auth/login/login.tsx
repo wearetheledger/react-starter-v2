@@ -11,7 +11,7 @@ import {
 	Logo
 } from "@pages/auth/login/loginStyle";
 import { auth0Provider } from "@utils/auth/auth0Provider";
-import { Alert } from "antd";
+import { Alert, Button } from "antd";
 import { autobind } from "core-decorators";
 import * as React from "react";
 import { FormattedMessage } from "react-intl";
