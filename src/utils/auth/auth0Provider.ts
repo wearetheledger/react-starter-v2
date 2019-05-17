@@ -23,7 +23,7 @@ export const auth0Provider: IProvider<Session> = {
 		localStorage.setItem("nonce", nonce);
 
 		return singleLineString`https://${AUTH0_DOMAIN}/authorize?response_type=id_token+token&client_id=${AUTH0_CLIENT_ID}
-        &redirect_uri=${location.origin}/redirect.html
+        &redirect_uri=${window.location.origin}/redirect.html
         &nonce=${nonce}
         &audience=${AUTH0_AUDIENCE}`;
 	},
@@ -36,12 +36,8 @@ export const auth0Provider: IProvider<Session> = {
 		}
 
 		const errorReason = errorMatch[1];
-		const errorDescriptionMatch = redirectUrl.match(
-			/error_description=([^&]+)/
-		);
-		const errorDescription = errorDescriptionMatch
-			? errorDescriptionMatch[1]
-			: "";
+		const errorDescriptionMatch = redirectUrl.match(/error_description=([^&]+)/);
+		const errorDescription = errorDescriptionMatch ? errorDescriptionMatch[1] : "";
 
 		return new Error(
 			`Error during login. Reason: ${errorReason} Description: ${decodeURIComponent(
@@ -62,9 +58,7 @@ export const auth0Provider: IProvider<Session> = {
 		const idTokenMatch = redirectUrl.match(/id_token=([^&]+)/);
 		if (idTokenMatch) {
 			idToken = idTokenMatch[1];
-			decodedIdToken = <Auth0IdToken>(
-				JSON.parse(atob(idToken.split(".")[1]))
-			);
+			decodedIdToken = JSON.parse(atob(idToken.split(".")[1])) as Auth0IdToken;
 
 			// Check nonce for replay-attack https://auth0.com/docs/api-auth/tutorials/nonce
 			if (decodedIdToken.nonce !== localStorage.getItem("nonce")) {
@@ -122,8 +116,7 @@ function singleLineString(strings: TemplateStringsArray, ...values: any[]) {
 }
 
 function getNonce() {
-	const validChars =
-		"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	const validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 	let array = new Uint8Array(40);
 	crypto.getRandomValues(array);
 	array = array.map(x => validChars.charCodeAt(x % validChars.length));

@@ -33,7 +33,8 @@
 		"react-this-binding-issue": false,
 		"no-empty": false,
 		"react-a11y-anchors": false,
-		"no-null-keyword": false
+		"no-null-keyword": false,
+		"prefer-type-cast": false
 	},
 	"linterOptions": {
 		"exclude": [

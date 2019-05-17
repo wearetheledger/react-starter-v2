@@ -1,11 +1,8 @@
-// tslint:disable: react-this-binding-issue
 import * as React from "react";
 import { connect } from "react-redux";
 import { Redirect, Route, RouteProps } from "react-router";
 
 import { StoreState } from "@store/reducers/root";
-
-export type StateProps = ReturnType<typeof mapStateToProps>;
 
 export interface PrivateRouteProps extends RouteProps {
 	noRedirect?: boolean;
@@ -50,6 +47,8 @@ export const mapStateToProps = (state: StoreState) => {
 		isAuthenticated: state.auth.isAuthenticated
 	};
 };
+
+export type StateProps = ReturnType<typeof mapStateToProps>;
 
 export const PrivateRoute = connect<StateProps, {}, PrivateRouteProps, StoreState>(mapStateToProps)(
 	PrivateRouteComponent

@@ -2,7 +2,6 @@
 import { MainProps } from "@pages/main/mainContainer";
 import { MainStyle } from "@pages/main/mainStyle";
 import { autobind } from "core-decorators";
-import _ from "lodash";
 import * as React from "react";
 
 interface State {}
