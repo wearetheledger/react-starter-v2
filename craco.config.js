@@ -3,22 +3,19 @@
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 const modifyVars = require("./src/style/ant-theme");
-const { whenTest } = require("@craco/craco");
-
-const plugins = [
-	"lodash"
-];
-
-if (!whenTest) {
-	plugins.push([
-		"import",
-		{ libraryName: "antd", libraryDirectory: "es", style: true }
-	]);
-}
+const { when } = require("@craco/craco");
 
 module.exports = {
 	babel: {
-		plugins
+		plugins: [
+			"lodash",
+
+			// Only add these imports when not running tests, 
+			when(process.env.NODE_ENV !== "test", () => [
+				"import",
+				{ libraryName: "antd", libraryDirectory: "es", style: true }
+			], [])
+		]
 	},
 	jest: {
 		configure: (jestConfig, { env, paths, resolve, rootDir }) => {
