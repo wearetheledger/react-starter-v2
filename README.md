@@ -1,5 +1,5 @@
 # React starter v2 
-![travis badge](https://travis-ci.org/wearetheledger/react-starter-v2.svg?branch=master)
+[![travis badge](https://travis-ci.org/wearetheledger/react-starter-v2.svg?branch=master)](https://travis-ci.org/wearetheledger/react-starter-v2)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
