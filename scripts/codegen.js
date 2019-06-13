@@ -8,14 +8,14 @@ var args = process.argv.slice(2);
 
 var url = args[0];
 
-http.get(url, function(res) {
+http.get(url, function (res) {
 	var body = "";
 
-	res.on("data", function(chunk) {
+	res.on("data", function (chunk) {
 		body += chunk;
 	});
 
-	res.on("end", function() {
+	res.on("end", function () {
 		var swagger = JSON.parse(body);
 
 		var tsSourceCode = CodeGen.generateCode({
@@ -48,10 +48,10 @@ http.get(url, function(res) {
 		});
 
 		fs.writeFileSync(
-			path.resolve(__dirname, "..", "src", "api", "./swagger-gen.ts"),
+			path.resolve(__dirname, "..", "src", "api", "swagger", "./swagger-gen.ts"),
 			tsSourceCode
 		);
 	});
-}).on("error", function(e) {
+}).on("error", function (e) {
 	console.log("Got an error: ", e);
 });

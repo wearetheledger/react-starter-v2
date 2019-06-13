@@ -34,7 +34,8 @@
 		"no-empty": false,
 		"react-a11y-anchors": false,
 		"no-null-keyword": false,
-		"prefer-type-cast": false
+		"prefer-type-cast": false,
+		"no-unnecessary-class": false
 	},
 	"linterOptions": {
 		"exclude": [
