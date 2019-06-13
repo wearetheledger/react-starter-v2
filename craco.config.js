@@ -11,10 +11,10 @@ module.exports = {
 			"lodash",
 
 			// Only add these imports when not running tests, 
-			when(process.env.NODE_ENV !== "test", () => [
+			...when(process.env.NODE_ENV !== "test", () => [[
 				"import",
 				{ libraryName: "antd", libraryDirectory: "es", style: true }
-			], [])
+			]], [])
 		]
 	},
 	jest: {

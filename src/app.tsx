@@ -6,9 +6,12 @@ import { logout } from "@store/actions/auth/logout";
 import { configureStore } from "@store/configureStore";
 import { Icon } from "antd";
 import * as React from "react";
-import { FormattedMessage, IntlProvider } from "react-intl";
+import { addLocaleData, FormattedMessage, IntlProvider } from "react-intl";
+import nlLocaleData from "react-intl/locale-data/nl";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+addLocaleData([...nlLocaleData]);
 
 const messages = require("./translations/nl.json");
 
