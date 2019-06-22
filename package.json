@@ -12,7 +12,7 @@
 		"generate-swagger": "node scripts/codegen.js http://localhost:5000/api-json"
 	},
 	"dependencies": {
-		"@craco/craco": "^5.2.1",
+		"@craco/craco": "^5.2.3",
 		"antd": "^3.19.5",
 		"axios": "^0.19.0",
 		"core-decorators": "^0.20.0",
