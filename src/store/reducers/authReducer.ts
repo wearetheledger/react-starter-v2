@@ -1,7 +1,7 @@
 import { login } from "@store/actions/auth/login";
 import { logout } from "@store/actions/auth/logout";
-import { Auth0IdToken, auth0Provider } from "@utils/auth/auth0Provider";
-import RSA from "react-simple-auth";
+import { AuthService } from "@utils/auth/authService";
+import { IdToken } from "@utils/auth/idToken";
 import { reducerWithInitialState } from "typescript-fsa-reducers";
 
 const INITIAL_STATE: AuthState = {
@@ -10,25 +10,33 @@ const INITIAL_STATE: AuthState = {
 
 export interface AuthState {
 	isAuthenticated: boolean;
-	user?: Auth0IdToken;
+	user?: IdToken;
 }
 
-const session = RSA.restoreSession(auth0Provider);
+const decodedToken = AuthService.getDecodedToken();
 
-if (session) {
+if (decodedToken) {
 	INITIAL_STATE.isAuthenticated = true;
-	INITIAL_STATE.user = session.decodedIdToken;
+	INITIAL_STATE.user = decodedToken;
 }
 
 export const authReducer = reducerWithInitialState<AuthState>(INITIAL_STATE)
-	.case(login, (state, props) => ({
-		...state,
-		isAuthenticated: true,
-		// tslint:disable-next-line: no-unsafe-any
-		user: props.user
-	}))
+	.case(login, (state, props) => {
+		const decoded = props.user ? props.user : AuthService.getDecodedToken(props.jwt);
+
+		if (props.jwt) {
+			AuthService.storeJwt(props.jwt);
+		}
+
+		return {
+			...state,
+			isAuthenticated: true,
+			// tslint:disable-next-line: no-unsafe-any
+			user: decoded
+		};
+	})
 	.case(logout, (state, props) => {
-		RSA.invalidateSession();
+		AuthService.logout();
 
 		return {
 			...state,

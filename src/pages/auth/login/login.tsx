@@ -10,13 +10,13 @@ import {
 	LoginStyle,
 	Logo
 } from "@pages/auth/login/loginStyle";
-import { auth0Provider } from "@utils/auth/auth0Provider";
+import { API_URL } from "@utils/env";
 import { Alert, Button } from "antd";
 import { autobind } from "core-decorators";
+import * as qs from "query-string";
 import * as React from "react";
 import { FormattedMessage } from "react-intl";
 import { Redirect } from "react-router";
-import RSA from "react-simple-auth";
 
 interface State {
 	error: boolean;
@@ -27,6 +27,16 @@ export class Login extends React.Component<LoginProps, State> {
 	public readonly state: State = {
 		error: false
 	};
+
+	public componentDidMount() {
+		const queryParams: { error?: boolean } = qs.parse(this.props.location.search);
+
+		if (queryParams.error) {
+			this.setState({
+				error: true
+			});
+		}
+	}
 
 	public render() {
 		const {
@@ -57,8 +67,8 @@ export class Login extends React.Component<LoginProps, State> {
 							/>
 						)}
 						<LoginForm intl={intl} form={form} handleSubmit={this.handleSubmit} />
-						<FormattedMessage id="auth.otherLogin" />{" "}
-						<Button type="link" onClick={this.auth0Login}>
+						<FormattedMessage id="auth.otherLogin" />
+						<Button type="link" href={`${API_URL}/auth/auth0`}>
 							Auth0
 						</Button>
 					</div>
@@ -84,21 +94,5 @@ export class Login extends React.Component<LoginProps, State> {
 				return;
 			}
 		});
-	}
-
-	private async auth0Login() {
-		try {
-			this.setState({
-				error: false
-			});
-
-			const session = await RSA.acquireTokenAsync(auth0Provider);
-
-			this.props.login(session.decodedIdToken);
-		} catch (err) {
-			this.setState({
-				error: true
-			});
-		}
 	}
 }

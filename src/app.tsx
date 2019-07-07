@@ -1,6 +1,7 @@
 import { PrivateRoute } from "@components/common/privateRoute/privateRoute";
 import { MainLayoutContainer, NavItem } from "@components/main/mainLayout/mainLayoutContainer";
 import { LoginContainer } from "@pages/auth/login/loginContainer";
+import { LoginSuccessContainer } from "@pages/auth/loginSuccess/loginSuccessContainer";
 import { MainContainer } from "@pages/main/mainContainer";
 import { logout } from "@store/actions/auth/logout";
 import { configureStore } from "@store/configureStore";
@@ -40,6 +41,7 @@ export const App: React.StatelessComponent = () => (
 		<IntlProvider messages={messages} locale="nl-BE">
 			<BrowserRouter>
 				<Switch>
+					<Route path="/login/succes" component={LoginSuccessContainer} />
 					<Route path="/login" component={LoginContainer} />
 					<PrivateRoute
 						noRedirect

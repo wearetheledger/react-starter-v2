@@ -1,14 +1,9 @@
-import { auth0Provider } from "@utils/auth/auth0Provider";
+import { AuthService } from "@utils/auth/authService";
 import { API_URL } from "@utils/env";
 import axios from "axios";
-import RSA from "react-simple-auth";
 import { createApi } from "./swagger-gen";
 
-let token = null;
-
-try {
-	token = RSA.getAccessToken(auth0Provider, "");
-} catch (err) {}
+const token = AuthService.getJwt();
 
 // tslint:disable-next-line: no-any
 const headers: any = {};

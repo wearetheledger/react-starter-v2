@@ -1,12 +1,15 @@
-import { auth0Provider } from "@utils/auth/auth0Provider";
+import { AuthService } from "@utils/auth/authService";
 import { API_URL } from "@utils/env";
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
-import RSA from "react-simple-auth";
 
 const authHeader: AxiosRequestConfig["headers"] = {};
 
 try {
-	authHeader.Authorization = `Bearer ${RSA.getAccessToken(auth0Provider, "")}`;
+	const token = AuthService.getJwt();
+
+	if (token) {
+		authHeader.Authorization = `Bearer ${token}`;
+	}
 } catch (err) {}
 
 /**
