@@ -21,9 +21,11 @@ exports[`should match snapshot 1`] = `
       >
         <div
           className="ant-row ant-form-item"
+          style={Object {}}
         >
           <div
             className="ant-col ant-form-item-control-wrapper"
+            style={Object {}}
           >
             <div
               className="ant-form-item-control"
@@ -73,7 +75,6 @@ exports[`should match snapshot 1`] = `
                       Object {
                         "name": "userName",
                         "originalProps": Object {
-                          "disabled": false,
                           "placeholder": undefined,
                           "prefix": <Icon
                             style={
@@ -116,11 +117,9 @@ exports[`should match snapshot 1`] = `
                         "valuePropName": "value",
                       }
                     }
-                    disabled={false}
                     id="userName"
                     onChange={[Function]}
                     onKeyDown={[Function]}
-                    size="large"
                     style={null}
                     type="text"
                     value=""
@@ -132,9 +131,11 @@ exports[`should match snapshot 1`] = `
         </div>
         <div
           className="ant-row ant-form-item"
+          style={Object {}}
         >
           <div
             className="ant-col ant-form-item-control-wrapper"
+            style={Object {}}
           >
             <div
               className="ant-form-item-control"
@@ -184,7 +185,6 @@ exports[`should match snapshot 1`] = `
                       Object {
                         "name": "password",
                         "originalProps": Object {
-                          "disabled": false,
                           "placeholder": undefined,
                           "prefix": <Icon
                             style={
@@ -227,11 +227,9 @@ exports[`should match snapshot 1`] = `
                         "valuePropName": "value",
                       }
                     }
-                    disabled={false}
                     id="password"
                     onChange={[Function]}
                     onKeyDown={[Function]}
-                    size="large"
                     style={null}
                     type="password"
                     value=""
@@ -243,9 +241,11 @@ exports[`should match snapshot 1`] = `
         </div>
         <div
           className="ant-row ant-form-item"
+          style={Object {}}
         >
           <div
             className="ant-col ant-form-item-control-wrapper"
+            style={Object {}}
           >
             <div
               className="ant-form-item-control"
@@ -263,16 +263,15 @@ exports[`should match snapshot 1`] = `
           </div>
         </div>
       </form>
-       
-      <button
+      <a
         className="ant-btn ant-btn-link"
+        href="http://localhost:5000/auth/auth0"
         onClick={[Function]}
-        type="button"
       >
         <span>
           Auth0
         </span>
-      </button>
+      </a>
     </div>
     <div
       className="sc-ifAKCX cFlEyZ"

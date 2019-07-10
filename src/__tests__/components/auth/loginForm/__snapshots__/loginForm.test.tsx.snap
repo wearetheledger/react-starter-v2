@@ -7,9 +7,11 @@ exports[`should match snapshot 1`] = `
 >
   <div
     className="ant-row ant-form-item"
+    style={Object {}}
   >
     <div
       className="ant-col ant-form-item-control-wrapper"
+      style={Object {}}
     >
       <div
         className="ant-form-item-control"
@@ -50,10 +52,8 @@ exports[`should match snapshot 1`] = `
             </span>
             <input
               className="ant-input ant-input-lg"
-              disabled={false}
               onChange={[Function]}
               onKeyDown={[Function]}
-              size="large"
               style={null}
               type="text"
               value=""
@@ -65,9 +65,11 @@ exports[`should match snapshot 1`] = `
   </div>
   <div
     className="ant-row ant-form-item"
+    style={Object {}}
   >
     <div
       className="ant-col ant-form-item-control-wrapper"
+      style={Object {}}
     >
       <div
         className="ant-form-item-control"
@@ -108,10 +110,8 @@ exports[`should match snapshot 1`] = `
             </span>
             <input
               className="ant-input ant-input-lg"
-              disabled={false}
               onChange={[Function]}
               onKeyDown={[Function]}
-              size="large"
               style={null}
               type="password"
               value=""
@@ -123,9 +123,11 @@ exports[`should match snapshot 1`] = `
   </div>
   <div
     className="ant-row ant-form-item"
+    style={Object {}}
   >
     <div
       className="ant-col ant-form-item-control-wrapper"
+      style={Object {}}
     >
       <div
         className="ant-form-item-control"
