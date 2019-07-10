@@ -263,16 +263,15 @@ exports[`should match snapshot 1`] = `
           </div>
         </div>
       </form>
-       
-      <button
+      <a
         className="ant-btn ant-btn-link"
+        href="http://localhost:5000/auth/auth0"
         onClick={[Function]}
-        type="button"
       >
         <span>
           Auth0
         </span>
-      </button>
+      </a>
     </div>
     <div
       className="sc-ifAKCX cFlEyZ"
