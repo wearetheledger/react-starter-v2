@@ -1,0 +1,13 @@
+{
+	"_id": "5d9b28a9b66f8043b39160c3",
+	"title": "Afkoppeling IBA",
+	"steps": [
+		{ "title": "Gegevens aanvrager" },
+		{ "title": "Gegevens pand" },
+		{ "title": "Aanvraag & stavingsdocumenten" },
+		{ "title": "Premieaanvraag ingediend" },
+		{ "title": "Premieaanvraag aanvaard" },
+		{ "title": "Premieaanvraag goedgekeurd" }
+	],
+	"name": "iba"
+}

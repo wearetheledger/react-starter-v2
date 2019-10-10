@@ -13,6 +13,7 @@
 	},
 	"dependencies": {
 		"@craco/craco": "^5.2.3",
+		"@types/react-jsonschema-form": "^1.6.5",
 		"antd": "^3.20.0",
 		"axios": "^0.19.0",
 		"core-decorators": "^0.20.0",
@@ -25,6 +26,7 @@
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6",
 		"react-intl": "^2.9.0",
+		"react-jsonschema-form": "^1.8.0",
 		"react-redux": "^7.1.0",
 		"react-router": "^5.0.1",
 		"react-router-dom": "^5.0.1",

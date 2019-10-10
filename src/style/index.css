@@ -1,4 +1,48 @@
 @import "./reset.css";
+@import "./bootstrap.min.css";
+
+@font-face {
+	font-family: Aller;
+	src: url(./fonts/Aller_Rg.ttf);
+}
+
+@font-face {
+	font-family: Aller_italic;
+	src: url(./fonts/Aller_It.ttf);
+	font-style: italic;
+}
+
+@font-face {
+	font-family: Aller_bold;
+	src: url(./fonts/Aller_Bd.ttf);
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: Aller_bold_italic;
+	src: url(./fonts/Aller_BdIt.ttf);
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: Aller_light;
+	src: url(./fonts/Aller_Lt.ttf);
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: Aller_light_italic;
+	src: url(./fonts/Aller_LtIt.ttf);
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: Aller_bolder;
+	src: url(./fonts/AllerDisplay.ttf);
+	font-weight: bolder;
+}
 
 #root {
 	min-height: 100%;
@@ -16,7 +60,7 @@ h4,
 h5,
 h6 {
 	/* letter-spacing: -0.05rem; */
-	font-weight: 700 !important;
+	font-weight: 700;
 }
 
 html,
@@ -25,12 +69,13 @@ body {
 }
 
 h1 {
-	margin-bottom: 2rem;
-	font-family: "PT Sans";
-	font-size: 3.072961673510399em;
-	font-weight: 600;
+	margin-bottom: 96px;
+	font-family: "Aller_light";
+	font-size: 38px;
 	font-style: normal;
-	letter-spacing: 0em;
+	font-weight: 300;
+	line-height: 1.05;
+	letter-spacing: 1px;
 }
 
 h2 {

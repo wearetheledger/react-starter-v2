@@ -11,6 +11,7 @@ import { addLocaleData, FormattedMessage, IntlProvider } from "react-intl";
 import nlLocaleData from "react-intl/locale-data/nl";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { FormPageContainer } from "@pages/formPage/formPageContainer";
 
 addLocaleData([...nlLocaleData]);
 
@@ -56,6 +57,11 @@ export const App: React.StatelessComponent = () => (
 						path="*"
 						render={() => (
 							<MainLayoutContainer renderItems={renderNav}>
+								<PrivateRoute
+									exact
+									path="/aanvraag/:applicationId"
+									component={FormPageContainer}
+								/>
 								<PrivateRoute exact path="/" component={MainContainer} />
 							</MainLayoutContainer>
 						)}

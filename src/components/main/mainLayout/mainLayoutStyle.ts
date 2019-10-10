@@ -4,6 +4,7 @@ import styled, { css } from "styled-components";
 
 export const containedCss = css`
 	margin: 0 auto;
+	height: 100%;
 	// Small devices (landscape phones, 576px and up)
 	@media (min-width: 576px) {
 		max-width: 576px;
@@ -41,15 +42,11 @@ interface HeaderProps {
 }
 
 export const Header = styled(Layout.Header)`
-	${(props: HeaderProps) =>
-		props.theme === "light" &&
-		css`
-			background: #fff;
-		`}
-
+	background-color: #e72033;
 	${Inner} {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 	}
 	.ant-menu {
 		line-height: 62px;
@@ -110,7 +107,8 @@ export const SideLogoWrapper = styled.div`
 `;
 
 export const Logo = styled.img`
-	max-width: 150px;
+	max-width: 190px;
+	max-height: 28px;
 	float: left;
 	margin-right: 1rem;
 `;

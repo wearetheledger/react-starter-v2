@@ -1,5 +1,14 @@
 import { MainLayoutProps, NavItem } from "@components/main/mainLayout/mainLayoutContainer";
-import { Content, Header, Inner, Logo, MainLayoutStyle, SideLogoWrapper, Sider, Trigger } from "@components/main/mainLayout/mainLayoutStyle";
+import {
+	Content,
+	Header,
+	Inner,
+	Logo,
+	MainLayoutStyle,
+	SideLogoWrapper,
+	Sider,
+	Trigger
+} from "@components/main/mainLayout/mainLayoutStyle";
 import { Layout, Menu } from "antd";
 import { autobind } from "core-decorators";
 import * as React from "react";
@@ -24,9 +33,7 @@ export class MainLayout extends React.Component<MainLayoutProps, State> {
 		return this.props.dark ? "dark" : "light";
 	}
 	public get logo() {
-		return this.props.dark
-			? require("@assets/images/logo_white.svg")
-			: require("@assets/images/logo_black.svg");
+		return require("@assets/images/logo.png");
 	}
 
 	public render() {
