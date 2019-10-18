@@ -27,7 +27,12 @@
 		"no-var-requires": false,
 		"no-require-imports": false,
 		"no-unsafe-any": false,
-		"this-binding-issue": [true, { "allow-anonymous-listeners": true }],
+		"this-binding-issue": [
+			true,
+			{
+				"allow-anonymous-listeners": true
+			}
+		],
 		"jsx-boolean-value": false,
 		"no-relative-imports": false,
 		"react-this-binding-issue": false,
@@ -44,7 +49,7 @@
 			"scripts/**/*.js",
 			"templates/**/*.txt",
 			"node_modules/**/*.ts",
-			"src/api/swagger-gen.ts"
+			"**/swagger-gen.ts"
 		]
 	}
 }

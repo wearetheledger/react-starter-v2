@@ -36,7 +36,8 @@
 		"src/setupTests.ts",
 		"config",
 		"plopfile.js",
-		"src/style/ant-theme.js"
+		"src/style/ant-theme.js",
+		"src/api/swagger-gen.ts"
 	],
 	"types": ["typePatches"],
 	"include": ["src", "__tests__/**/*"]

@@ -1,0 +1,5 @@
+src/api/swagger-gen.ts
+config/**/*.js
+scripts/**/*.js
+templates/**/*.txt
+**/swagger-gen.ts
