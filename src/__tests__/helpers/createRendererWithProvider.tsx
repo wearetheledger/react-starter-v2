@@ -1,5 +1,6 @@
 import { StoreState } from "@store/reducers/root";
 import React, { ReactNode } from "react";
+import { IntlProvider } from "react-intl";
 import { Provider } from "react-redux";
 import { MemoryRouter } from "react-router";
 import renderer from "react-test-renderer";
@@ -11,9 +12,14 @@ const mockedStore = configureMockStore<StoreState>()({
 	}
 });
 
-export const createRendererWithProvider = (children: ReactNode) => (store = mockedStore) =>
+export const createRendererWithProvider = (children: ReactNode) => (
+	store = mockedStore,
+	messages = {}
+) =>
 	renderer.create(
 		<MemoryRouter initialEntries={["/"]}>
-			<Provider store={store}>{children}</Provider>
+			<IntlProvider messages={messages} locale="nl-BE">
+				<Provider store={store}>{children}</Provider>
+			</IntlProvider>
 		</MemoryRouter>
 	);

@@ -139,7 +139,11 @@ exports[`should match snapshot 1`] = `
             className="ant-btn ant-btn-primary ant-btn-lg ant-btn-block"
             onClick={[Function]}
             type="submit"
-          />
+          >
+            <span>
+              auth.login
+            </span>
+          </button>
         </span>
       </div>
     </div>
