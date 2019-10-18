@@ -54,29 +54,6 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Authentication
-
-Authentication is configured for **Auth0** using [`react-simple-auth`](https://github.com/mattmazzola/react-simple-auth) as an example.
-
-### Change authentication provider
-
-To change the authentication provider, you have to create a new provider in `src/utils/auth`. This provider should implement following interface:
-```typescript
-export interface IProvider<T> {
-    buildAuthorizeUrl(): string;
-    extractError(redirectUrl: string): Error | undefined;
-    extractSession(redirectUrl: string): T;
-    validateSession(session: T): boolean;
-    getAccessToken(session: T, resourceId: string): string;
-    getSignOutUrl(redirectUrl: string): string;
-}
-```
-
-You can take a look at the [Auth0Provider](src/utils/auth/auth0Provider.ts) for an example.
-
-The only other thing you should do, is to go to [src/store/reducers/authReducer.ts](src/store/reducers/authReducer.ts) and replace the `Auth0IdToken` by your newly created interface.
-
-
 ## Code generation
 
 Please use [plopjs](https://plopjs.com/documentation/) to generate pages, components & redux actions to keep code consistency.
